@@ -1,0 +1,6 @@
+**/.terraform/
+**/*.zip
+**/.DS_Store
+**/__MACOSX
+**/*tfstate*
+**/_bootstrap/.terraform.lock.hcl
