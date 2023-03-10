@@ -9,11 +9,9 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - echo Building the Docker image... 
-      - docker run --privileged --rm tonistiigi/binfmt --install all
-      - docker run -entrypoint="/bin/bash" -i test 
-      - docker build -t $REPOSITORY_URI:latest ${path.module}/docker/ 
-      - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG   
+      - echo Building the Docker image...
+      - docker build -t $REPOSITORY_URI:latest ${path.module}/docker/
+      - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG
   post_build:
     commands:
       - echo Build completed on `date`
